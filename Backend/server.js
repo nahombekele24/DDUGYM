@@ -16,7 +16,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(frontendPath)); 
 
-/* --- DATABASE --- */
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -29,26 +28,20 @@ db.connect(err => {
     else console.log('Connected to DDUGYM Database');
 });
 
-/* --- AUTH MIDDLEWARE --- */
 const verifyToken = (req, res, next) => {
     const token = req.headers['authorization'];
     if (!token) return res.status(403).json({ error: "No token provided" });
 
     jwt.verify(token, SECRET_KEY, (err, decoded) => {
         if (err) return res.status(401).json({ error: "Session expired" });
-        // Use the ID we stored during login
         req.userId = decoded.userId; 
         next();
     });
 };
 
-/* --- HTML ROUTES --- */
 app.get('/', (req, res) => { res.sendFile(path.join(frontendPath, 'index.html')); });
 app.get('/dashboard', (req, res) => { res.sendFile(path.join(frontendPath, 'dashboard.html')); });
 
-/* --- API ROUTES --- */
-
-// 1. REGISTRATION
 app.post('/api/register', async (req, res) => {
     try {
         const { first_name, last_name, date_of_birth, email, password, phone, street_address, plan_id } = req.body;
@@ -61,7 +54,6 @@ app.post('/api/register', async (req, res) => {
     } catch (error) { res.status(500).json({ error: "Server error" }); }
 });
 
-// 2. LOGIN
 app.post('/api/login', (req, res) => {
     const { email, password } = req.body;
     db.query("SELECT * FROM Members WHERE email = ?", [email], async (err, results) => {
@@ -70,16 +62,13 @@ app.post('/api/login', (req, res) => {
         const user = results[0];
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(401).json({ error: "Invalid credentials" });
-
-        // We use user.id to match your DB column
+        
         const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '1h' });
         res.status(200).json({ token });
     });
 });
 
-// 3. MEMBER INFO (Corrected and Combined)
 app.get('/api/member-info', verifyToken, (req, res) => {
-    // We use "id" because that is what your database column is named
     const sql = `SELECT * FROM Members WHERE id = ?`;
 
     db.query(sql, [req.userId], (err, results) => {
@@ -101,5 +90,6 @@ app.get('/api/member-info', verifyToken, (req, res) => {
         res.json(user);
     });
 });
+
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
