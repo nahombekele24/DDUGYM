@@ -36,7 +36,7 @@
     document.getElementById('dashPlan').innerText = data.plan_name || "Active";
 }else {
             const errorData = await res.json();
-            // This alert will stop the redirect so you can read the error
+            
             alert("Server Error: " + errorData.error); 
             window.location.href = '/';
         }
@@ -53,4 +53,5 @@
     window.onload = loadData;
     </script>
 </body>
+
 </html>
