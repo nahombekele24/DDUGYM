@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DDU GYM</title>
+  <link rel="stylesheet" href="/gym.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <div class="logo">DDU GYM</div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Testimonials</a>
+        <a id="contactbar" href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="hamburger" onclick="toggleSidebar()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+  </header>
+  <nav>
+    
+    <nav id="sidebar" class="sidebar">
+  <a href="#home" onclick="toggleSidebar()">Home</a>
+  <a href="#about" onclick="toggleSidebar()">About</a>
+  <a href="#services" onclick="toggleSidebar()">Services</a>
+  <a href="#schedule" onclick="toggleSidebar()">Schedule</a>
+  <a href="#gallery" onclick="toggleSidebar()">Gallery</a>
+  <a href="#testimonials" onclick="toggleSidebar()">Testimonials</a>
+  <a href="#contact" onclick="toggleSidebar()">Contact</a>
+</nav>
+
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <div class="hero-overlay">
+      <h1>Push Your Limits at DDU Gym</h1>
+      <a href="#contact" class="btn">Join Us</a>
+      <a href="#login" class="btn1">Log in</a>
+    </div>
+  </section>  
+  <!--About Section-->
+  <section id="about" class="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80" alt="DDU Gym Team">      </div>
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>DDU Gym is your partner in fitness. From world-class equipment to expert trainers, we provide the best atmosphere to reach your goals.</p>
+  
+        <h3>Our Story</h3>
+        <p>Founded in 2025, DDU Gym started with a vision to create a space where anyone can feel empowered to achieve their health goals. What began as a small studio has grown into a state-of-the-art center with a passionate community.</p>
+  
+        <h3>Meet Our Team</h3>
+        <p>Our team, led by expert trainer <strong>Nahom Bekele</strong>, is made up of certified professionals dedicated to helping you transform your body and mind.</p>
+  
+        <h3>Our Mission</h3>
+        <ul>
+          <li>Empower individuals through fitness and well-being</li>
+          <li>Provide a safe, inclusive, and motivating environment</li>
+          <li>Promote healthy living through training, nutrition, and community</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500" alt="Personal Training">       
+         <h3>Personal Training</h3>
+        <p>Customized one-on-one training sessions with expert coaches tailored to your goals.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=8" alt="Group Fitness Class">         
+        <h3>Group Classes</h3>
+        <p>Energetic classes like Yoga, HIIT, and Zumba that keep you motivated and moving.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=500&q=80" alt="Nutrition Coaching">        
+        <h3>Nutrition Coaching</h3>
+        <p>Get personalized nutrition guidance that complements your fitness journey.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Schedule Section -->
+  <section id="schedule">
+    <h2>Class Schedule</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th><th>Mon</th><th>Wed</th><th>Fri</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6:00 AM</td><td>Yoga</td><td>HIIT</td><td>Cardio</td></tr>
+        <tr><td>6:00 PM</td><td>Boxing</td><td>Spin</td><td>Crossfit</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Weights Training">      
+      <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=800&q=80" alt="Cardio Training">      
+      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80" alt="Yoga">
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=400&q=80" alt="CrossFit">
+      <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=400&q=80" alt="Dumbbells">
+      <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=400&q=80" alt="Gym Interior">
+    </div>
+  </section>
+  
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-card">
+        <p>"The best gym in town! Amazing equipment and the staff is very helpful."</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80" alt="Abel">          
+          <strong>Abel</strong>
+        </div>
+      </div>
+  
+      <div class="testimonial-card">
+        <p>"Amazing staff and atmosphere. I love coming here every day!"</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&h=100&q=80" alt="Eyob">         
+           <strong>Eyob</strong>
+        </div>
+      </div>
+  
+      <div class="testimonial-card">
+        <p>"Great classes, expert trainers, and a real sense of community!"</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" alt="Sara">         
+           <strong>Sara</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="login" style="padding: 50px; background: #000;">
+    <h2>Member Login</h2>
+    <form id="loginForm" class="contact-form" style="max-width: 400px; margin: auto;">
+        <label for="login_email">Email</label>
+        <input type="email" id="login_email" required placeholder="Email">
+
+        <label for="login_password">Password</label>
+        <input type="password" id="login_password" required>
+
+        <button type="submit" class="btn">Login</button>
+    </form>
+</section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+      
+      <!-- Contact Form -->
+      <form id="contactForm" class="contact-form">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" required maxlength="50">
+
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" required maxlength="50">
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="date_of_birth">
+        
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required maxlength="100">
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="09......" maxlength="15">
+        
+        <label for="street">Department</label>
+        <input type="text" id="street" name="street_address" maxlength="100">
+
+        <label for="plan">Choose Your Plan</label>
+        <select id="plan" name="plan_id" required>
+            <option value="">-- Select a Plan --</option>
+            <option value="1">Monthly Basic (600Birr)</option>
+            <option value="2">Annual Premium (6500)</option>
+            <option value="3">Student Discount (400)</option>
+        </select>
+        
+        <button type="submit" class="btn">Complete Registration</button>
+      </form>
+  
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Visit Us</h3>
+        <p>DDU Gym, University Campus,<br> Dire Dawa, Ethiopia</p>
+  
+        <h3>Call</h3>
+        <p>+251 912 345 678</p>
+  
+        <h3>Email</h3>
+        <p>info@ddugym.com</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 DDU Gym. All rights reserved.</p>
+  </footer>
+
+  <script src="gym.js"></script>
+    <script>
+    function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+  }
+    </script> 
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="gym.css">
+</head>
+<body style="background:#000; color:#fff; text-align:center; padding-top:100px;">
+    <h1>Welcome, <span id="dashName">Loading...</span></h1>
+    <p>Membership: <span id="dashPlan">...</span></p>
+    <button onclick="logout()" style="padding:10px; cursor:pointer;">Logout</button>
+
+    <script>
+    async function loadData() {
+    const token = localStorage.getItem('gymToken');
+    console.log("Checking token in storage:", token);
+
+    if (!token) {
+        alert("No token found! Please login again.");
+        window.location.href = '/'; 
+        return;
+    }
+
+    try {
+        const res = await fetch('/api/member-info', {
+            method: 'GET',
+            headers: { 
+                'Authorization': token,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (res.ok) {
+    const data = await res.json();
+    document.getElementById('dashName').innerText = data.first_name || "User";
+    document.getElementById('dashPlan').innerText = data.plan_name || "Active";
+}else {
+            const errorData = await res.json();
+            // This alert will stop the redirect so you can read the error
+            alert("Server Error: " + errorData.error); 
+            window.location.href = '/';
+        }
+    } catch (err) {
+        alert("Failed to connect to server: " + err.message);
+    }
+}
+    
+    function logout() { 
+        localStorage.removeItem('gymToken'); 
+        window.location.href = '/'; 
+    }
+    
+    window.onload = loadData;
+    </script>
+</body>
+</html>
