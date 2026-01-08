@@ -21,11 +21,10 @@ async function handleLogin(e) {
         const data = await response.json();
 
         if (response.ok && data.token) {
-            // Save the token
             localStorage.setItem('gymToken', data.token);
             console.log("Token saved successfully!");
             
-            // Give the browser a tiny moment to ensure storage is set
+            
             setTimeout(() => {
                 window.location.href = '/dashboard';
             }, 100); 
@@ -56,4 +55,5 @@ async function handleRegistration(e) {
         body: JSON.stringify(formData)
     });
     if (res.ok) alert("Registration Success! Please Login.");
+
 }
