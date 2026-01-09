@@ -8,7 +8,7 @@
 <body>
     <section id="dashboardSection" style="display: flex">
         <div class="dash-container">
-          <h2>Welcome, <span id="dashName" style="color: #ff4d4d;">User</span></h2>
+          <h2>Welcome, <span id="dashName" style="color: #3498db;">User</span></h2>
           
           <div class="dash-item">
             <label>Membership Status</label>
@@ -31,7 +31,7 @@
     }
 
     try {
-        const res = await fetch('/api/member-info', {
+        const res = await fetch('/api/auth/member-info', {
             method: 'GET',
             headers: { 
                 'Authorization': token,
@@ -45,6 +45,7 @@
     document.getElementById('dashPlan').innerText = data.plan_name || "Active";
 }else {
             const errorData = await res.json();
+            // This alert will stop the redirect so you can read the error
             alert("Server Error: " + errorData.error); 
             window.location.href = '/';
         }

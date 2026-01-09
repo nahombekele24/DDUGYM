@@ -528,81 +528,81 @@ header {
     overflow: hidden;
   }
 
-#dashboardSection {
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
-              url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600');
-  background-size: cover;
-  height: 100vh;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 100px 20px;
-}
-
-.dash-container {
-  background: #111; /* Matches your login section */
-  border: 1px solid #333;
-  border-radius: 15px;
-  padding: 40px;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-.dash-container h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.dash-item {
-  background: #1a1a1a;
-  margin: 15px 0;
-  padding: 20px;
-  border-radius: 10px;
-  border-left: 4px solid #3498db;
-  text-align: left;
-  transition: transform 0.3s ease;
-}
-
-.dash-item:hover {
-  transform: translateX(10px);
-  background: #222;
-}
-
-.dash-item label {
-  display: block;
-  color: #3498db;
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-
-.dash-item span {
-  font-size: 1.2rem;
-  color: #fff;
-  font-weight: 500;
-}
-
-.logout-btn {
-    margin-top: 30px;
-    background: #3498db;
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
+  #dashboardSection {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600');
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+  }
+  
+  .dash-container {
+    background: #111; /* Matches your login section */
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 500px;
     width: 100%;
-    transition: background 0.3s;
-}
-
-.logout-btn:hover {
-    background: #1a3b60;
-}
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  .dash-container h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  
+  .dash-item {
+    background: #1a1a1a;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .dash-item:hover {
+    transform: translateX(10px);
+    background: #222;
+  }
+  
+  .dash-item label {
+    display: block;
+    color: #3498db;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  
+  .dash-item span {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  .logout-btn {
+      margin-top: 30px;
+      background: #3498db;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+  }
+  
+  .logout-btn:hover {
+      background: #1a3b60;
+  }
   
   @media (max-width: 768px) {
     .contact-container {
@@ -678,5 +678,3 @@ header {
     display: none;
   }
 }
-
-
