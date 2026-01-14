@@ -6,20 +6,18 @@ class AuthService {
         const [rows] = await db.query("SELECT * FROM Members WHERE email = ?", [email]);
         return rows[0];
     }
-
-    async createMember(userData) {
-        const { first_name, last_name, date_of_birth, email, password, phone, street_address, plan_id } = userData;
-        const hashedPassword = await bcrypt.hash(password, 10);
-        
-        const sql = `INSERT INTO Members (first_name, last_name, date_of_birth, email, password, phone, department, plan_id) 
-                     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
-        
-        return await db.query(sql, [first_name, last_name, date_of_birth, email, hashedPassword, phone, street_address, plan_id]);
+    
+    async findUserById(id) {
+        const [rows] = await db.query("SELECT * FROM Members WHERE id = ?", [id]);
+        return rows[0];
     }
 
-    async getMemberById(userId) {
-        const [rows] = await db.query("SELECT * FROM Members WHERE id = ?", [userId]);
-        return rows[0];
+    async createMember(userData) {
+        const { first_name, last_name, date_of_birth, email, password, phone, department, plan_id } = userData;
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const sql = `INSERT INTO Members (first_name, last_name, date_of_birth, email, password, phone, department, plan_id) 
+                     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+        return await db.query(sql, [first_name, last_name, date_of_birth, email, hashedPassword, phone, department, plan_id]);
     }
 
     async getAllUsers() {
@@ -27,6 +25,5 @@ class AuthService {
         return rows;
     }
 }
-
 
 module.exports = new AuthService();
